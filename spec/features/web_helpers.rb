@@ -8,6 +8,6 @@ end
 
 def attack
 	sign_in_and_play
-	click_button "Attack"
-	click_button "OK"
+	click_on "Attack"
+	click_on "OK"
 end
