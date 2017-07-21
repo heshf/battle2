@@ -13,8 +13,9 @@ require 'game'
 
     describe '#new' do
       it "takes two arguments when being initialized" #do
-      #  expect(Game).to respond_to(:new).with(player)
-      #end
+			# 	binding.pry
+      # 	expect(Game).to respond_to(:new).with(player, player)
+      # end
     end
 
 		describe '#gameover?' do
