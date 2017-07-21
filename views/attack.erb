@@ -1,10 +1,14 @@
+<h1>Battle!</h1>
+<h2>
 <% if @game.attacker == @game.player_1 %>
 	<%= @player_1_name %> attacked <%= @player_2_name %>!
 <% else %>
 	<%= @player_2_name %> attacked <%= @player_1_name %>!
 <% end %>
-
-
-<form action="/switchplayers">
-<button type="submit">OK</button>
-</form>
+</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="/switchplayers" class="greybutton">OK</a>

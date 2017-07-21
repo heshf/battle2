@@ -19,9 +19,7 @@ post '/names' do
 end
 
 get '/play' do
-  @player_1_name = $game.player_1.name
-  @player_2_name = $game.player_2.name
-  @hit_points = $game.player_2.hit_points
+  @game = $game
   erb :play
 end
 

@@ -1,6 +1,8 @@
-<%= @player_1_name %> vs. <%= @player_2_name %><br>
-<%= @player_2_name %>: <%= @hit_points %>HP<br>
+<h1>Battle!</h1>
 
-<form action="/attack">
-<button type="submit">Attack</button>
-</form>
+<br>
+<h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2><br>
+<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
+<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP <br>
+<br>
+<a href="/attack" class="redbutton">Attack</a>
