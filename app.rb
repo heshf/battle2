@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'Player'
+require './lib/player'
 #set :session_secret, 'super secret'
 class Battle < Sinatra::Base
 enable :sessions
