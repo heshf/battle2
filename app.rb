@@ -12,23 +12,23 @@ get '/' do
 end
 
 post '/names' do
-  $game = Game.new
-  $player_1 = Player.new(params[:player_1_name])
-  $player_2 = Player.new(params[:player_2_name])
+  player_1 = Player.new(params[:player_1_name])
+  player_2 = Player.new(params[:player_2_name])
+  $game = Game.new(player_1, player_2)
   redirect'/play'
 end
 
 get '/play' do
-  @player_1_name = $player_1.name
-  @player_2_name = $player_2.name
-  @hit_points = $player_2.hit_points
+  @player_1_name = $game.player_1.name
+  @player_2_name = $game.player_2.name
+  @hit_points = $game.player_2.hit_points
   erb :play
 end
 
 get '/attack' do
-  @player_1_name = $player_1.name
-  @player_2_name = $player_2.name
-  $game.attack($player_2)
+  @player_1_name = $game.player_1.name
+  @player_2_name = $game.player_2.name
+  $game.attack($game.player_2)
   erb(:attack)
 
 end

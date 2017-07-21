@@ -6,12 +6,7 @@ class Player
 		@hit_points = 60
 	end
 
-	def attack(target)
-		target.take_damage
-	end
-
 	def take_damage
 		@hit_points -= 10
 	end
-
 end
