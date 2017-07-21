@@ -26,11 +26,16 @@ get '/play' do
 end
 
 get '/attack' do
+  @game = $game
   @player_1_name = $game.player_1.name
   @player_2_name = $game.player_2.name
-  $game.attack($game.player_2)
+  $game.attack($game.defender)
   erb(:attack)
+end
 
+get '/switchplayers' do
+  $game.switch_turn
+  redirect '/play'
 end
 
   #start the server if ruby file executed directly

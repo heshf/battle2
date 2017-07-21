@@ -1,5 +1,10 @@
-<%= @player_1_name %> attacked <%= @player_2_name %>!
+<% if @game.attacker == @game.player_1 %>
+	<%= @player_1_name %> attacked <%= @player_2_name %>!
+<% else %>
+	<%= @player_2_name %> attacked <%= @player_1_name %>!
+<% end %>
 
-<form action="/play">
+
+<form action="/switchplayers">
 <button type="submit">OK</button>
 </form>
