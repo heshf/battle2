@@ -7,7 +7,6 @@ end
 
 
 def attack
-	sign_in_and_play
 	click_on "Attack"
 	click_on "OK"
 end

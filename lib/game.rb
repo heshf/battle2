@@ -16,4 +16,9 @@ class Game
 	def switch_turn
 		@attacker, @defender = @defender, @attacker
 	end
+
+	def gameover?
+		@player_1.hit_points <= 0 ? true : false
+		@player_2.hit_points <= 0 ? true : false
+	end	
 end

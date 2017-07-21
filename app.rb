@@ -20,7 +20,14 @@ end
 
 get '/play' do
   @game = $game
+  redirect '/gameover' if @game.gameover?
   erb :play
+end
+
+get '/gameover' do
+  @loser = $game.player_1.name if $game.player_1.hit_points <= 0
+  @loser = $game.player_2.name  if $game.player_2.hit_points <= 0
+  erb :gameover
 end
 
 get '/attack' do

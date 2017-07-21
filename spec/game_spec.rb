@@ -2,7 +2,7 @@ require 'game'
 
 	describe Game do
 		subject(:subject) { described_class.new(player, player) }
-    let(:player) { double(:player) }
+    let(:player) { double(:player, dead?: true, hit_points: 0)}
 
 		describe '#attack' do
 			it "runs the take_damage method on the target" do
@@ -16,4 +16,10 @@ require 'game'
       #  expect(Game).to respond_to(:new).with(player)
       #end
     end
+
+		describe '#gameover?' do
+			it "returns true if a player is dead" do
+				expect(subject.gameover?).to be true
+			end
+		end
   end
